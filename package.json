@@ -2,40 +2,35 @@
   "name": "webgi-vanilla-typescript",
   "version": "1.0.0",
   "description": "WebGi + TypeScript example starter project",
-  "browser": {
-    "distDir": "./dist",
-    "isHtml": true
-  },
-  "default": "index.html",
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --no-minify --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --verbose"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.14.4",
-    "@parcel/transformer-webmanifest": "^2.14.4",
-    "buffer": "^6.0.3",
     "parcel-bundler": "^1.6.1",
-    "parcel-plugin-static-files-copy": "^2.6.0"
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.4.7.tgz"
   },
   "resolutions": {
-    "@babel/preset-env": "^7.10.0"
+    "@babel/preset-env": "7.13.8"
   },
   "keywords": [
     "javascript"
   ],
   "staticFiles": {
-    "staticPath": "assets",
-    "staticOutDir": "assets"
+    "staticPath": [
+      {
+        "staticPath": "assets",
+        "staticOutDir": "assets"
+      }
+    ]
   },
   "dependencies": {
-    "@types/webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-types-0.10.4.tgz",
-    "gh-pages": "^6.3.0",
+    "gh-pages": "^4.0.0",
     "gsap": "^3.11.1",
-    "parcel": "^2.14.4",
-    "tweakpane": "^3.1.0",
-    "viewer": "^0.10.11",
-    "webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-0.10.4.tgz",
-    "webpack": "^5.99.5"
+    "push-dir": "^0.4.1",
+    "tweakpane": "^3.1.0"
   }
 }
